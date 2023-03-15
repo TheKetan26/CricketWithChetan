@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <title>
+
+        {% block title %} {% endblock %}
+
+    </title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg {
+            height: 80vh;
+            width: 100vw;
+            position: fixed;
+            top: 20vh;
+            background-image: url('{% static "svg\bg_wave.svg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+        .title {
+            width: 100vw;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 4pc;
+            font-family: 'Pacifico', cursive;
+        }
+        h5 {
+            font-size: 1.5pc;
+        }
+        {% block style %}{% endblock %}
+    </style>
+</head>
+<body>
+
+    <div class="bg"></div>
+    <div class="title">
+        <h1>Cricket With Chetan</h1>
+        <h5>Cricket is not just a game, it's an emotion.</h5>
+    </div>
+    {% block main %}{% endblock %}
+
+</body>
+</html>

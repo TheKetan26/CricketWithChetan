@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Home - Cricket With Chetan
+{% endblock %}
+
+
+{% block style %}
+.main {
+    margin: 7vh 20% 3vh 20%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    width: 250px;
+    background: rgba(0, 0, 0, .25);
+    height: 60%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+{% endblock %}
+
+
+{% block main %}
+<section class="main">
+    <a href="states/">
+        <div class="card">
+            <h3>Players<br/>&<br/>States</h3>
+        </div>
+    </a>
+    <a href="predict/pre/">
+        <div class="card">
+            <h3>Predict<br/>Team</h3>
+        </div>
+    </a>
+</section>
+{% endblock %}

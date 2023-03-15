@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+State - Cricket With Chetan
+{% endblock %}
+
+
+{% block style %}
+.main {
+    margin: 7vh 20% 3vh 20%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, .25);
+    border-radius: 20px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.back {
+    padding: 5px 20px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background: rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
+}
+{% endblock %}
+
+
+{% block main %}
+<a href="/" class="back">Back</a>
+<section class="main">
+    <div>
+        <h4>Batsman</h4>
+        <div>
+            {% for player in batsman %}
+            {{ player.0|add:1 }}. {{ player.1.0 }}<br/>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h4>Bowler</h4>
+        <div>
+            {% for player in bowler %}
+            {{ player.0|add:1 }}. {{ player.1.0 }}<br/>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h4>Allrounder</h4>
+        <div>
+            {% for player in allrounder %}
+            {{ player.0|add:1 }}. {{ player.1.0 }}<br/>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

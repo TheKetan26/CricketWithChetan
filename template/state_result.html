@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+State - Cricket With Chetan
+{% endblock %}
+
+
+{% block style %}
+.main {
+    margin: 7vh 20% 3vh 20%;
+    padding: 50px 0;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, .25);
+    border-radius: 20px;
+}
+.card {
+    width: 250px;
+    background: rgba(0, 0, 0, .25);
+    height: 60%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.back {
+    padding: 5px 20px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background: rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
+}
+{% endblock %}
+
+
+{% block main %}
+<a href="/" class="back">Back</a>
+<section class="main">
+    <h2>{{ player_name }} States</h2>
+    {% if role == 'batsman' %}
+        <div class="states">
+            <p>Matches: {{ batting_experience }}</p>
+            <p>Runs: {{ batting_runs }}</p>
+            <p>Average: {{ batting_average }}</p>
+            <p>Strike-rate: {{ strikerate }}</p>
+        </div>
+    {% elif role == 'bowler' %}
+        <div class="states">
+            <p>Matches: {{ bowling_experience }}</p>
+            <p>Wickets: {{ wicket }}</p>
+            <p>Average Wickets: {{ wicket_average }}</p>
+            <p>Average: {{ bowling_average }}</p>
+        </div>
+    {% else %}
+        <div class="states">
+            <p>Batting Matches: {{ batting_experience }}</p>
+            <p>Batting Runs: {{ batting_runs }}</p>
+            <p>Batting Average: {{ batting_average }}</p>
+            <p>Strike-rate: {{ strikerate }}</p>
+            <p>Bowling Matches: {{ bowling_experience }}</p>
+            <p>Bowling Wickets: {{ wicket }}</p>
+            <p>Bowling Average: {{ bowling_average }}</p>
+        </div>
+    {% endif %}
+    <div></div>
+</section>
+{% endblock %}
