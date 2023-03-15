@@ -22,7 +22,8 @@ def get_teams(request):
         body = loads(request.body.decode('utf-8'))
         try:
             response = extract.teams(body['type'])
-
+        except KeyError:
+            response = None
 
     return JsonResponse({
         'teams': response
